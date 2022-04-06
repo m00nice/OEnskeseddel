@@ -3,8 +3,8 @@ package com.example.oenskeseddel.controllers;
 
 import com.example.oenskeseddel.DATA.Arbiter;
 
-import com.example.oenskeseddel.temp.Bruger;
-import com.example.oenskeseddel.temp.WList;
+import com.example.oenskeseddel.DATA.Bruger.Bruger;
+import com.example.oenskeseddel.DATA.Ønskeliste.WList;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,32 +22,7 @@ public class Controller {
     @GetMapping("/")
     public String index(){return "index";}
 
-    @GetMapping("/LogInd")
-    public String LogIndSide(Model model){
-        model.addAttribute("bruger", new Bruger());
-        return "LogInd";
-    }
 
-
-
-    @PostMapping("/LogInd")
-    public String LogInd(@ModelAttribute Bruger bruger) throws SQLException {
-        int UserID = arbiter.confirmLogIn(bruger.getUsername(), bruger.getPassword());
-        if(UserID==0){
-
-        }
-        return "LogInd";
-    }
-
-
-    @GetMapping("/OpretBruger")
-    public String OpretBrugerSide(Model model){
-        model.addAttribute("bruger", new Bruger());
-        return "OpretBruger";
-    }
-
-
-//   v
     @PostMapping("/Opret Bruger")
     public String OpretBruger(@ModelAttribute Bruger bruger) throws SQLException {
 
@@ -55,7 +30,7 @@ public class Controller {
 
         return "OpretBruger";
     }
-//   ^
+
 
     @GetMapping("/DinØnskeListe")
     public String getWishList(Model model){

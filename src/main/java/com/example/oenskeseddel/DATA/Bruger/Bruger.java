@@ -1,10 +1,35 @@
-package com.example.oenskeseddel.temp;
+package com.example.oenskeseddel.DATA.Bruger;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "brugerliste")
 
 public class Bruger {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String Email;
     private String Username;
     private String Password;
     private String PasswordRE;
+    private int id;
+
+    public Bruger(String email, String username, String password, int id) {
+        Email = email;
+        Username = username;
+        Password = password;
+        this.id = id;
+    }
+
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return Username;

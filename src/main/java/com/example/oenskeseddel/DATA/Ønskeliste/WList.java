@@ -1,4 +1,4 @@
-package com.example.oenskeseddel.temp;
+package com.example.oenskeseddel.DATA.Ønskeliste;
 
 import java.util.ArrayList;
 

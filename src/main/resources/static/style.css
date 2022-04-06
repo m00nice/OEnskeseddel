@@ -1,5 +1,5 @@
 body{
-    background-image: url("shooting-star-5.jpg");
+    background-image: url("templates/shooting-star-5.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -83,7 +83,7 @@ footer{
     font-family: Calibri;
 }
 .backtoMainButton{
-    background-image: url("download.png");
+    background-image: url("templates/download.png");
     background-size: cover;
     width: 20%;
     height: 10%;
